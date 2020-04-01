@@ -7,8 +7,8 @@
 
 import Foundation
 
-class DecodeOptional {
-    static func decode<T: Codable>(_ data: Data, type: T.Type) -> T? {
+extension JSONDecoder {
+    static func decodeOptional<T: Codable>(_ data: Data, type: T.Type) -> T? {
         do {
             let value = try JSONDecoder().decode(type, from: data)
             return value

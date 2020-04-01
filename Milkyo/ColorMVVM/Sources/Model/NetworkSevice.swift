@@ -37,7 +37,7 @@ fileprivate struct ApiProvider {
                     return
                 }
                 
-                guard let model = DecodeOptional.decode(jsonData, type: [Color].self) else {
+                guard let model = JSONDecoder.decodeOptional(jsonData,type: [Color].self) else {
                     emitter(.error(ApiProviderError.parseError))
                     return
                 }
