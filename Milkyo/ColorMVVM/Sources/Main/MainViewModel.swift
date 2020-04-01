@@ -47,6 +47,12 @@ class MainViewModel: MainViewModelType, MainViewModelInput, MainViewModelOutput 
     
     init(_ networkSevice: NetworkService = NetworkService()) {
         self.networkSevice = networkSevice
+        
+        self._isFavorite.withLatestFrom(_color)
+            .do(onNext: { _ in self.fetchData()})
+            .bind(to: self._color)
+            .disposed(by: disposeBag)
+        
     }
     
     func favoriteButtonPressed() {
@@ -56,14 +62,23 @@ class MainViewModel: MainViewModelType, MainViewModelInput, MainViewModelOutput 
     func fetchData() {
         self._isLoading.accept(true)
         
-        networkSevice.fetchColors()
+       var colors =  networkSevice.fetchColors()
+        
+        if self._isFavorite.value {
+            colors = colors.map { $0.filter { $0.isFavorite }}
+        }
+        
+        colors
             .map { $0.map { ColorCellViewModel($0)}}
             .map { ([ColorCellSection(model: Void(), items: $0)]) }
             .asObservable()
             .do(onCompleted: { [weak self] in self?._isLoading.accept(false) })
             .bind(to: self._color)
             .disposed(by: disposeBag)
+
+
     }
+    
     
 }
 
