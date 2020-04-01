@@ -1,0 +1,6 @@
+framework module Pods_ColorMVVM {
+  umbrella header "Pods-ColorMVVM-umbrella.h"
+
+  export *
+  module * { export * }
+}

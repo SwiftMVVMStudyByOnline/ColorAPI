@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17680B41377DB9C0DC6138D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99993ACA61249BB9AFC7EA6 /* AppDelegate.swift */; };
+		2B4E63EEC35DCCDAC581B52E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD408684A90996290310AD7 /* Assets.xcassets */; };
+		9683F43363FA1A5FBF50C089 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D2A8C89E9DB1C110EE3DE37 /* LaunchScreen.storyboard */; };
+		AD9D969CC6936B1BCC1E2888 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB109D131DFB8DD32D1088B7 /* MainViewController.swift */; };
+		C35B2F9424341962000B18A3 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35B2F9324341962000B18A3 /* UIColor+.swift */; };
+		C35B2F9624341A87000B18A3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35B2F9524341A87000B18A3 /* MainViewModel.swift */; };
+		C35B2F98243422DE000B18A3 /* ColorCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35B2F97243422DE000B18A3 /* ColorCellViewModel.swift */; };
+		C36531A5242F5C9C00A4D3FA /* MainToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36531A4242F5C9C00A4D3FA /* MainToolBar.swift */; };
+		C36531A7242F68DE00A4D3FA /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36531A6242F68DE00A4D3FA /* ColorCell.swift */; };
+		C3A2C917243324FF005854D1 /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A2C916243324FF005854D1 /* ColorList.swift */; };
+		C3A2C91C243325DD005854D1 /* ColorLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A2C91B243325DD005854D1 /* ColorLists.swift */; };
+		C3A2C91E24333172005854D1 /* ApiType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A2C91D24333172005854D1 /* ApiType.swift */; };
+		C3A2C920243331FD005854D1 /* NetworkSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A2C91F243331FD005854D1 /* NetworkSevice.swift */; };
+		C3A2C92224333420005854D1 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A2C92124333420005854D1 /* JSON.swift */; };
+		EB8E07ECE3BC8B522D8DE668 /* Pods_ColorMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5BCDB54CE827142A4FD1C0 /* Pods_ColorMVVM.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		389DE8532C68A18A59A31ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		799425F0CD3CBDCA34B4F19B /* Pods-ColorMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorMVVM.debug.xcconfig"; path = "Target Support Files/Pods-ColorMVVM/Pods-ColorMVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		7EEAEC5A10078DD21C18FCC0 /* ColorMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ACBC7756118F48B5BF37D24 /* Pods-ColorMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorMVVM.release.xcconfig"; path = "Target Support Files/Pods-ColorMVVM/Pods-ColorMVVM.release.xcconfig"; sourceTree = "<group>"; };
+		C35B2F9324341962000B18A3 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		C35B2F9524341A87000B18A3 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		C35B2F97243422DE000B18A3 /* ColorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCellViewModel.swift; sourceTree = "<group>"; };
+		C36531A4242F5C9C00A4D3FA /* MainToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainToolBar.swift; sourceTree = "<group>"; };
+		C36531A6242F68DE00A4D3FA /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		C3A2C916243324FF005854D1 /* ColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorList.swift; sourceTree = "<group>"; };
+		C3A2C91B243325DD005854D1 /* ColorLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLists.swift; sourceTree = "<group>"; };
+		C3A2C91D24333172005854D1 /* ApiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiType.swift; sourceTree = "<group>"; };
+		C3A2C91F243331FD005854D1 /* NetworkSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSevice.swift; sourceTree = "<group>"; };
+		C3A2C92124333420005854D1 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		CC5BCDB54CE827142A4FD1C0 /* Pods_ColorMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D99993ACA61249BB9AFC7EA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB109D131DFB8DD32D1088B7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FAA05C2E97B37DA16D28D26D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FFD408684A90996290310AD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6F80FA2A2A660D521556516 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB8E07ECE3BC8B522D8DE668 /* Pods_ColorMVVM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		291C9A180C478B4D1B87F36B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EEAEC5A10078DD21C18FCC0 /* ColorMVVM.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30110143B5888A84C358F7A0 = {
+			isa = PBXGroup;
+			children = (
+				D0072DB38DC45F0CBDA4EACD /* ColorMVVM */,
+				291C9A180C478B4D1B87F36B /* Products */,
+				9F3944DCD08A7BD907EB84E5 /* Pods */,
+				59B22295DD03A717545924F7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		59B22295DD03A717545924F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC5BCDB54CE827142A4FD1C0 /* Pods_ColorMVVM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F3944DCD08A7BD907EB84E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				799425F0CD3CBDCA34B4F19B /* Pods-ColorMVVM.debug.xcconfig */,
+				9ACBC7756118F48B5BF37D24 /* Pods-ColorMVVM.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C35B2F9B243466D3000B18A3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DB109D131DFB8DD32D1088B7 /* MainViewController.swift */,
+				C35B2F9524341A87000B18A3 /* MainViewModel.swift */,
+				C36531A6242F68DE00A4D3FA /* ColorCell.swift */,
+				C35B2F97243422DE000B18A3 /* ColorCellViewModel.swift */,
+				C36531A4242F5C9C00A4D3FA /* MainToolBar.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C3A2C915243324F4005854D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C3A2C916243324FF005854D1 /* ColorList.swift */,
+				C3A2C92124333420005854D1 /* JSON.swift */,
+				C3A2C91D24333172005854D1 /* ApiType.swift */,
+				C3A2C91F243331FD005854D1 /* NetworkSevice.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C3A2C91A243325CB005854D1 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C3A2C91B243325DD005854D1 /* ColorLists.swift */,
+				C35B2F9324341962000B18A3 /* UIColor+.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C4E771FAB2E17B2220D7F19F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C3A2C91A243325CB005854D1 /* Utility */,
+				C3A2C915243324F4005854D1 /* Model */,
+				C35B2F9B243466D3000B18A3 /* Main */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D0072DB38DC45F0CBDA4EACD /* ColorMVVM */ = {
+			isa = PBXGroup;
+			children = (
+				C4E771FAB2E17B2220D7F19F /* Sources */,
+				FE28CA58DCB949F7FDD5B8BF /* Supporting Files */,
+			);
+			path = ColorMVVM;
+			sourceTree = "<group>";
+		};
+		FE28CA58DCB949F7FDD5B8BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D99993ACA61249BB9AFC7EA6 /* AppDelegate.swift */,
+				FFD408684A90996290310AD7 /* Assets.xcassets */,
+				389DE8532C68A18A59A31ADE /* Info.plist */,
+				5D2A8C89E9DB1C110EE3DE37 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4705A847F5B199762C92F534 /* ColorMVVM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8E566EF813A375CA79F54F2 /* Build configuration list for PBXNativeTarget "ColorMVVM" */;
+			buildPhases = (
+				B4B4B8D40A0F6E4AA6E64909 /* [CP] Check Pods Manifest.lock */,
+				AC6EEBF0B515F19221E1EB19 /* Sources */,
+				F896AC92B4F00C4A91722E4B /* Resources */,
+				F6F80FA2A2A660D521556516 /* Frameworks */,
+				16F82510F48C42A27225F602 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColorMVVM;
+			productName = ColorMVVM;
+			productReference = 7EEAEC5A10078DD21C18FCC0 /* ColorMVVM.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8660E7D7017B7FBE1D86F711 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+			};
+			buildConfigurationList = E6D13608D3C22E2AADCEFA35 /* Build configuration list for PBXProject "ColorMVVM" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 30110143B5888A84C358F7A0;
+			productRefGroup = 291C9A180C478B4D1B87F36B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4705A847F5B199762C92F534 /* ColorMVVM */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F896AC92B4F00C4A91722E4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B4E63EEC35DCCDAC581B52E /* Assets.xcassets in Resources */,
+				9683F43363FA1A5FBF50C089 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16F82510F48C42A27225F602 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ColorMVVM/Pods-ColorMVVM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ColorMVVM/Pods-ColorMVVM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ColorMVVM/Pods-ColorMVVM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4B4B8D40A0F6E4AA6E64909 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ColorMVVM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC6EEBF0B515F19221E1EB19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17680B41377DB9C0DC6138D1 /* AppDelegate.swift in Sources */,
+				AD9D969CC6936B1BCC1E2888 /* MainViewController.swift in Sources */,
+				C3A2C917243324FF005854D1 /* ColorList.swift in Sources */,
+				C35B2F9624341A87000B18A3 /* MainViewModel.swift in Sources */,
+				C3A2C92224333420005854D1 /* JSON.swift in Sources */,
+				C36531A7242F68DE00A4D3FA /* ColorCell.swift in Sources */,
+				C36531A5242F5C9C00A4D3FA /* MainToolBar.swift in Sources */,
+				C3A2C91E24333172005854D1 /* ApiType.swift in Sources */,
+				C3A2C91C243325DD005854D1 /* ColorLists.swift in Sources */,
+				C3A2C920243331FD005854D1 /* NetworkSevice.swift in Sources */,
+				C35B2F98243422DE000B18A3 /* ColorCellViewModel.swift in Sources */,
+				C35B2F9424341962000B18A3 /* UIColor+.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5D2A8C89E9DB1C110EE3DE37 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAA05C2E97B37DA16D28D26D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2E7F74C37AC0D1A1FB7547C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		779301253935D9CECA26050B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 799425F0CD3CBDCA34B4F19B /* Pods-ColorMVVM.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5BY5MQ6875;
+				INFOPLIST_FILE = "ColorMVVM/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.milkyo.ColorMVVM;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9DF5A0E96A5C0ABAC589627E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ACBC7756118F48B5BF37D24 /* Pods-ColorMVVM.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5BY5MQ6875;
+				INFOPLIST_FILE = "ColorMVVM/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.milkyo.ColorMVVM;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		AC7E0CB8065FE3580984F797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6D13608D3C22E2AADCEFA35 /* Build configuration list for PBXProject "ColorMVVM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC7E0CB8065FE3580984F797 /* Debug */,
+				2E7F74C37AC0D1A1FB7547C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E8E566EF813A375CA79F54F2 /* Build configuration list for PBXNativeTarget "ColorMVVM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				779301253935D9CECA26050B /* Debug */,
+				9DF5A0E96A5C0ABAC589627E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8660E7D7017B7FBE1D86F711 /* Project object */;
+}
