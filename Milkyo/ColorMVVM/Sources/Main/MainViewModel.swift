@@ -76,9 +76,7 @@ class MainViewModel: MainViewModelType, MainViewModelInput, MainViewModelOutput 
             .bind(to: self._color)
             .disposed(by: disposeBag)
 
-
     }
-    
     
 }
 
