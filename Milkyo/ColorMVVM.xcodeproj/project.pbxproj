@@ -29,6 +29,7 @@
 		799425F0CD3CBDCA34B4F19B /* Pods-ColorMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorMVVM.debug.xcconfig"; path = "Target Support Files/Pods-ColorMVVM/Pods-ColorMVVM.debug.xcconfig"; sourceTree = "<group>"; };
 		7EEAEC5A10078DD21C18FCC0 /* ColorMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ACBC7756118F48B5BF37D24 /* Pods-ColorMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorMVVM.release.xcconfig"; path = "Target Support Files/Pods-ColorMVVM/Pods-ColorMVVM.release.xcconfig"; sourceTree = "<group>"; };
+		C31E4C2A243574200015A257 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C35B2F9324341962000B18A3 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		C35B2F9524341A87000B18A3 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		C35B2F97243422DE000B18A3 /* ColorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCellViewModel.swift; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 30110143B5888A84C358F7A0;
 			productRefGroup = 291C9A180C478B4D1B87F36B /* Products */;
@@ -284,6 +286,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FAA05C2E97B37DA16D28D26D /* Base */,
+				C31E4C2A243574200015A257 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -387,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

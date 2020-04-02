@@ -21,6 +21,7 @@ protocol MainViewModelOutput {
     var color: Driver<[ColorCellSection]> { get }
     var isLoading: Driver<Bool> { get }
     var isFavorite: Driver<Bool> { get }
+    var error: Driver<String?> { get }
 }
 
 protocol MainViewModelType {
@@ -39,11 +40,13 @@ class MainViewModel: MainViewModelType, MainViewModelInput, MainViewModelOutput 
     lazy var isLoading: Driver<Bool> = _isLoading.asDriver()
     lazy var color: Driver<[ColorCellSection]> = _color.asDriver()
     lazy var isFavorite: Driver<Bool> = _isFavorite.asDriver()
+    lazy var error: Driver<String?> = _error.asDriver()
     
     //State
     private var _color: BehaviorRelay<[ColorCellSection]> = .init(value: [])
     private var _isLoading: BehaviorRelay<Bool> = .init(value: false)
     private var _isFavorite: BehaviorRelay<Bool> = .init(value: false)
+    private let _error: BehaviorRelay<String?> = BehaviorRelay(value: nil)
     
     init(_ networkSevice: NetworkService = NetworkService()) {
         self.networkSevice = networkSevice
@@ -69,9 +72,13 @@ class MainViewModel: MainViewModelType, MainViewModelInput, MainViewModelOutput 
         }
         
         colors
+            .asObservable()
+            .catchError({ error in
+                self._error.accept(error.localizedDescription)
+                return .empty()
+            })
             .map { $0.map { ColorCellViewModel($0)}}
             .map { ([ColorCellSection(model: Void(), items: $0)]) }
-            .asObservable()
             .do(onCompleted: { [weak self] in self?._isLoading.accept(false) })
             .bind(to: self._color)
             .disposed(by: disposeBag)

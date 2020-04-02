@@ -112,6 +112,17 @@ class MainViewController: UIViewController {
             .drive(toolBar.favoriteButton!.rx.isSelected)
             .disposed(by: self.disposeBag)
         
+        self.viewModel.output.error
+            .asObservable()
+            .compactMap { $0 }
+            .subscribe(onNext: { [weak self] in
+                let alertViewController = UIAlertController(title: nil, message: $0, preferredStyle: .alert)
+                alertViewController.addAction(UIAlertAction(title: "확인", style: .default))
+                
+                self?.present(alertViewController, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
     }
 }
 extension MainViewController: UITableViewDelegate {
