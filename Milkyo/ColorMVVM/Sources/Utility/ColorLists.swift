@@ -28,7 +28,7 @@ enum ColorLists {
         if #available(iOS 13.0, *) {
             return .systemGray5
         } else {
-            return UIColor(displayP3Red: 229, green: 229, blue: 234, alpha: 1.0)
+            return UIColor(displayP3Red: 229/255, green: 229/255, blue: 234/255, alpha: 1.0)
         }
     }
 }
