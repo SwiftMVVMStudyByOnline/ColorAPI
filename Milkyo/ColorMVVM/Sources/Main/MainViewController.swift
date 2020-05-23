@@ -10,29 +10,29 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import RxViewBinder
 
 enum Cell {
     static let colorCell = "\(ColorCell.self)"
 }
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, BindView {
+    
+    typealias ViewBinder = MainViewBindable
     
     weak var tableView: UITableView?
     weak var indicator: UIActivityIndicatorView?
     weak var toolBar: MainToolBar!
-    
-    let disposeBag = DisposeBag()
-    let viewModel: MainViewModelType
-    
+
     private let dataSource = RxTableViewSectionedReloadDataSource<ColorCellSection>(configureCell: { dataSource, tableView, indexPath, viewModel in
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Cell.colorCell, for: indexPath) as? ColorCell else { fatalError() }
         cell.viewModel = viewModel
         return cell
     })
     
-    init(viewModel: MainViewModelType = MainViewModel()) {
-        self.viewModel = viewModel
+    init(viewBindable: ViewBinder = MainViewBindable() ) {
         super.init(nibName: nil, bundle: nil)
+        self.viewBinder = viewBindable
     }
     
     required init?(coder: NSCoder) {
@@ -90,29 +90,41 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         self.navigationItem.title  = "색상 목록"
-        self.bind()
-        self.viewModel.input.fetchData()
     }
     
-    func bind() {
+    
+    func state(viewBinder: MainViewBindable) {
+        self.toolBar.favoriteButton!.rx.tap
+            .map { _ in MainViewBindable.Command.pressed}
+            .bind(to: viewBinder.command)
+            .disposed(by: self.disposeBag)
         
-        self.viewModel.output.color
+        self.rx.methodInvoked(#selector(UIViewController.viewDidLoad))
+           .map { _ in ViewBinder.Command.fetch }
+           .bind(to: viewBinder.command)
+           .disposed(by: self.disposeBag)
+    }
+    
+    func command(viewBinder: MainViewBindable) {
+
+        viewBinder.state
+            .color
             .drive(tableView!.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-
-        self.toolBar.favoriteButton!.rx.tap
-            .bind(onNext: viewModel.input.favoriteButtonPressed)
-            .disposed(by: self.disposeBag)
         
-        self.viewModel.output.isLoading
+        viewBinder.state
+            .isLoading
             .drive(onNext: { [weak self] in $0 ? self?.indicator?.startAnimating() : self?.indicator?.stopAnimating() })
-            .disposed(by: self.disposeBag)
+                  .disposed(by: self.disposeBag)
         
-        self.viewModel.output.isFavorite
+        viewBinder.state
+            .isFavorite
             .drive(toolBar.favoriteButton!.rx.isSelected)
             .disposed(by: self.disposeBag)
         
-        self.viewModel.output.error
+                
+        viewBinder.state
+            .error
             .asObservable()
             .compactMap { $0 }
             .subscribe(onNext: { [weak self] in
@@ -122,8 +134,10 @@ class MainViewController: UIViewController {
                 self?.present(alertViewController, animated: true)
             })
             .disposed(by: disposeBag)
-        
+
     }
+
+    
 }
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
