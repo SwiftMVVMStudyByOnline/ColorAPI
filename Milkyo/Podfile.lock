@@ -10,11 +10,13 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - RxViewBinder (2.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
 
 DEPENDENCIES:
-  - RxCocoa (~> 5)
   - RxDataSources (~> 4.0)
-  - RxSwift (~> 5)
+  - RxViewBinder (~> 2.0.0)
 
 SPEC REPOS:
   trunk:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - RxDataSources
     - RxRelay
     - RxSwift
+    - RxViewBinder
 
 SPEC CHECKSUMS:
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
@@ -30,7 +33,8 @@ SPEC CHECKSUMS:
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxViewBinder: 63c7ad3b9a74a0290c6b7f033d54a448edaf3a00
 
-PODFILE CHECKSUM: b412d5a173039ffb3fccf010a1520ddcca3e6a6b
+PODFILE CHECKSUM: 9b0a18ec6c0b9f5f23c3e739e49ac5f759dd1615
 
 COCOAPODS: 1.9.1

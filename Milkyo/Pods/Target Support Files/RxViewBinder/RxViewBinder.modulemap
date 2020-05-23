@@ -1,0 +1,6 @@
+framework module RxViewBinder {
+  umbrella header "RxViewBinder-umbrella.h"
+
+  export *
+  module * { export * }
+}
