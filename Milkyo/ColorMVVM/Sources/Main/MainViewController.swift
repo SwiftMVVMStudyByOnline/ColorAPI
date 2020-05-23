@@ -23,7 +23,7 @@ class MainViewController: UIViewController, BindView {
     weak var tableView: UITableView?
     weak var indicator: UIActivityIndicatorView?
     weak var toolBar: MainToolBar!
-
+    
     private let dataSource = RxTableViewSectionedReloadDataSource<ColorCellSection>(configureCell: { dataSource, tableView, indexPath, viewModel in
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Cell.colorCell, for: indexPath) as? ColorCell else { fatalError() }
         cell.viewModel = viewModel
@@ -94,19 +94,7 @@ class MainViewController: UIViewController, BindView {
     
     
     func state(viewBinder: MainViewBindable) {
-        self.toolBar.favoriteButton!.rx.tap
-            .map { _ in MainViewBindable.Command.pressed}
-            .bind(to: viewBinder.command)
-            .disposed(by: self.disposeBag)
         
-        self.rx.methodInvoked(#selector(UIViewController.viewDidLoad))
-           .map { _ in ViewBinder.Command.fetch }
-           .bind(to: viewBinder.command)
-           .disposed(by: self.disposeBag)
-    }
-    
-    func command(viewBinder: MainViewBindable) {
-
         viewBinder.state
             .color
             .drive(tableView!.rx.items(dataSource: dataSource))
@@ -115,14 +103,14 @@ class MainViewController: UIViewController, BindView {
         viewBinder.state
             .isLoading
             .drive(onNext: { [weak self] in $0 ? self?.indicator?.startAnimating() : self?.indicator?.stopAnimating() })
-                  .disposed(by: self.disposeBag)
+            .disposed(by: self.disposeBag)
         
         viewBinder.state
             .isFavorite
             .drive(toolBar.favoriteButton!.rx.isSelected)
             .disposed(by: self.disposeBag)
         
-                
+        
         viewBinder.state
             .error
             .asObservable()
@@ -134,9 +122,22 @@ class MainViewController: UIViewController, BindView {
                 self?.present(alertViewController, animated: true)
             })
             .disposed(by: disposeBag)
-
     }
-
+    
+    func command(viewBinder: MainViewBindable) {
+        
+        self.toolBar.favoriteButton!.rx.tap
+            .map { _ in MainViewBindable.Command.pressed}
+            .bind(to: viewBinder.command)
+            .disposed(by: self.disposeBag)
+        
+        self.rx.methodInvoked(#selector(UIViewController.viewDidLoad))
+            .map { _ in ViewBinder.Command.fetch }
+            .bind(to: viewBinder.command)
+            .disposed(by: self.disposeBag)
+        
+    }
+    
     
 }
 extension MainViewController: UITableViewDelegate {
